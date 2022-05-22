@@ -11,10 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'shopify_django_app.settings')
-
-on_heroku = os.environ.get("ON_HEROKU")
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'shopify_django_app.heroku_settings')    
 
 application = get_wsgi_application()
