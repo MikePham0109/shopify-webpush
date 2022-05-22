@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='root_path'),
     path('sw/ssp', views.send_file, name='send_file'),
+    path('sw/ssp/', views.send_file, name='send_file'),
 ]
