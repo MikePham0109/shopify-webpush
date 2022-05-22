@@ -10,7 +10,7 @@ RUN pipenv install
 
 COPY . .
 
-RUN pipenv run python manage.py migrate
+# RUN pipenv run python manage.py migrate
 
 RUN chmod +x scripts/boostrap.sh
 

@@ -9,6 +9,7 @@ verify_ssl = true
 django = ">=3.0.2"
 ShopifyAPI = ">=5.1.2"
 gunicorn = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.8"
