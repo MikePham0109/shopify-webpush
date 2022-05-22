@@ -9,8 +9,6 @@ verify_ssl = true
 django = ">=3.0.2"
 ShopifyAPI = ">=5.1.2"
 gunicorn = "*"
-django-heroku-postgresify = "*"
-django-on-heroku = "*"
 
 [requires]
 python_version = "3.8"

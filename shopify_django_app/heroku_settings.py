@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 from shopify_app import *
 # from postgresify import postgresify
-import django_on_heroku
+# import django_on_heroku
+from urllib.parse import urlparse
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -86,9 +87,20 @@ WSGI_APPLICATION = 'shopify_django_app.wsgi.application'
 #     }
 # }
 
-# DATABASES = postgresify()
+postgres_url = os.environ.get("DATABASE_URL")
+db = urlparse(postgres_url)
 
-django_on_heroku.settings(locals())
+DATABASES = {
+'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': db.path.replace("/",""),
+    'USER': db.username,
+    'PASSWORD': db.password,
+    'HOST': db.hostname,
+    'PORT': db.port,
+}
+}
+
 
 
 
