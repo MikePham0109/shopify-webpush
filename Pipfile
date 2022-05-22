@@ -10,6 +10,7 @@ django = ">=3.0.2"
 ShopifyAPI = ">=5.1.2"
 gunicorn = "*"
 psycopg2-binary = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"
